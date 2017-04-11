@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // Webpack Config
 var webpackConfig = {
@@ -22,7 +23,8 @@ var webpackConfig = {
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery'
-  })
+  }),
+  new ExtractTextPlugin("styles.css")
 ],
 
   module: {
@@ -42,10 +44,13 @@ var webpackConfig = {
              test: /\.scss$/,
              loaders: ['raw-loader', 'sass-loader']
       },
-      { 
-              test: /\.(woff2?|ttf|eot|svg)$/, 
-              loader: 'url-loader?limit=10000' 
+      {     
+             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+             loader: "url-loader?limit=10000&minetype=application/font-woff" 
       },
+      {      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+             loader: "file-loader" 
+      }
     ]
   }
 

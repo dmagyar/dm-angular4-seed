@@ -1,6 +1,3 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 .fullpage {
   font-family: 'Helvetica' !important;
@@ -8,11 +5,3 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding-bottom: 20px;
 }
 
-a.navbar-link {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.navbar-header {
-  margin-top: 18px;
-}
